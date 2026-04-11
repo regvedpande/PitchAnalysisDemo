@@ -21,23 +21,23 @@ export function LineChart({ data }: { data: MonthlyScorePoint[] }) {
     .join(" ");
 
   return (
-    <div className="rounded-3xl border border-white/80 bg-white p-5 shadow-[var(--shadow-soft)]">
-      <div className="mb-5 flex items-end justify-between gap-4">
+    <div className="surface-card rounded-2xl p-4">
+      <div className="mb-4 flex items-end justify-between gap-4">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent)]">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-accent)]">
             Score Trend
           </p>
-          <h3 className="mt-2 text-xl font-semibold text-slate-950">
+          <h3 className="mt-2 text-lg font-semibold text-slate-950">
             Monthly pitch quality is trending upward
           </h3>
         </div>
-        <div className="rounded-full bg-[var(--color-brand-soft)] px-3 py-1 text-xs font-semibold text-[var(--color-brand-strong)]">
+        <div className="hidden rounded-full bg-[var(--color-brand-soft)] px-3 py-1 text-[11px] font-semibold text-[var(--color-brand-strong)] sm:block">
           +18 points YoY
         </div>
       </div>
       <svg
         viewBox={`0 0 ${width} ${height}`}
-        className="h-72 w-full"
+        className="h-64 w-full"
         role="img"
         aria-label="Mock monthly pitch scores"
       >
@@ -61,7 +61,7 @@ export function LineChart({ data }: { data: MonthlyScorePoint[] }) {
             />
           );
         })}
-        <polyline fill="none" stroke="#f97316" strokeWidth="4" points={points} />
+        <polyline fill="none" stroke="#f07c2b" strokeWidth="3" points={points} />
         <polygon
           fill="url(#scoreFill)"
           points={`${padding},${height - padding} ${points} ${width - padding},${height - padding}`}
@@ -77,7 +77,7 @@ export function LineChart({ data }: { data: MonthlyScorePoint[] }) {
               (height - padding * 2);
           return (
             <g key={point.month}>
-              <circle cx={x} cy={y} r="5" fill="#0f4c81" />
+              <circle cx={x} cy={y} r="4" fill="#1e4f86" />
               <text
                 x={x}
                 y={height - 10}

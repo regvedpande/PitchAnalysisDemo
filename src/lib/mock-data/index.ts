@@ -14,6 +14,20 @@ export const demoUser: DemoUser = {
   initials: "AP",
 };
 
+export const powerUserTemplate: DemoUser = {
+  id: "power-user",
+  name: "Jordan Blake",
+  role: "Power User",
+  company: "Perfect Pitch Demo Workspace",
+  email: "power.user@perfectpitch.demo",
+  initials: "JB",
+};
+
+export const powerUserCredentials = {
+  email: "power.user@perfectpitch.demo",
+  password: "PowerUser2026!",
+};
+
 export const pitchCategories: PitchCategory[] = [
   "Tax Strategies and Planning",
   "Mutual Fund Tax Implications",

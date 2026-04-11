@@ -28,13 +28,13 @@ export default async function PitchDetailPage({
         action={{ href: "/sales-pitches/new", label: "Analyze Another Pitch" }}
       />
 
-      <div className="grid gap-6 xl:grid-cols-[1.1fr,0.9fr]">
+      <div className="grid gap-5 xl:grid-cols-[1.1fr,0.9fr]">
         <VideoPlaceholder label={pitch.thumbnailLabel} duration={pitch.duration} />
 
-        <div className="rounded-[28px] border border-white/80 bg-white p-6 shadow-[var(--shadow-soft)]">
+        <div className="surface-card rounded-2xl p-5">
           <div className="flex items-center justify-between gap-4">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent)]">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-accent)]">
                 Analysis Overview
               </p>
               <p className="mt-3 text-sm text-[var(--color-text-muted)]">
@@ -47,12 +47,12 @@ export default async function PitchDetailPage({
             <StatusBadge status={pitch.status} />
           </div>
 
-          <div className="mt-8 rounded-3xl bg-[linear-gradient(135deg,#fff7ed_0%,#eaf2fb_100%)] p-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-brand-strong)]">
+          <div className="mt-6 rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface-muted)] p-5">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-brand-strong)]">
               Overall Score
             </p>
             <div className="mt-4 flex items-end gap-3">
-              <span className="text-6xl font-semibold tracking-tight text-slate-950">
+              <span className="text-5xl font-semibold tracking-tight text-slate-950">
                 {pitch.score}
               </span>
               <span className="pb-2 text-sm font-medium text-[var(--color-text-muted)]">

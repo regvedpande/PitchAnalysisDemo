@@ -40,20 +40,20 @@ export function PitchTable({ pitches, categories }: PitchTableProps) {
   }, [pitches, dismissedIds, search, status, category, month]);
 
   return (
-    <div className="rounded-[28px] border border-white/80 bg-white p-6 shadow-[var(--shadow-soft)]">
+    <div className="surface-card rounded-2xl p-5">
       <div className="grid gap-3 lg:grid-cols-[2fr,1fr,1fr,1fr]">
         <input
           value={search}
           onChange={(event) => setSearch(event.target.value)}
           placeholder="Search by title, presenter, or audience"
-          className="rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface-muted)] px-4 py-3 text-sm outline-none transition focus:border-[var(--color-accent)]"
+          className="rounded-xl border border-[var(--color-line)] bg-[var(--color-surface-muted)] px-4 py-2.5 text-sm outline-none transition focus:border-[var(--color-accent)]"
         />
         <select
           value={category}
           onChange={(event) =>
             setCategory(event.target.value as "all" | PitchCategory)
           }
-          className="rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface-muted)] px-4 py-3 text-sm outline-none transition focus:border-[var(--color-accent)]"
+          className="rounded-xl border border-[var(--color-line)] bg-[var(--color-surface-muted)] px-4 py-2.5 text-sm outline-none transition focus:border-[var(--color-accent)]"
         >
           <option value="all">All Categories</option>
           {categories.map((item) => (
@@ -65,7 +65,7 @@ export function PitchTable({ pitches, categories }: PitchTableProps) {
         <select
           value={status}
           onChange={(event) => setStatus(event.target.value as "all" | PitchStatus)}
-          className="rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface-muted)] px-4 py-3 text-sm outline-none transition focus:border-[var(--color-accent)]"
+          className="rounded-xl border border-[var(--color-line)] bg-[var(--color-surface-muted)] px-4 py-2.5 text-sm outline-none transition focus:border-[var(--color-accent)]"
         >
           <option value="all">All Statuses</option>
           <option value="completed">Completed</option>
@@ -75,7 +75,7 @@ export function PitchTable({ pitches, categories }: PitchTableProps) {
         <select
           value={month}
           onChange={(event) => setMonth(event.target.value)}
-          className="rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface-muted)] px-4 py-3 text-sm outline-none transition focus:border-[var(--color-accent)]"
+          className="rounded-xl border border-[var(--color-line)] bg-[var(--color-surface-muted)] px-4 py-2.5 text-sm outline-none transition focus:border-[var(--color-accent)]"
         >
           <option value="all">All Dates</option>
           <option value="2026-04">April 2026</option>
@@ -83,7 +83,7 @@ export function PitchTable({ pitches, categories }: PitchTableProps) {
         </select>
       </div>
 
-      <div className="mt-6 overflow-hidden rounded-3xl border border-[var(--color-line)]">
+      <div className="mt-5 overflow-hidden rounded-2xl border border-[var(--color-line)]">
         <div className="hidden grid-cols-[2.4fr,1.5fr,1fr,1fr,1.2fr] gap-4 bg-slate-50 px-5 py-4 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-text-muted)] md:grid">
           <span>Pitch</span>
           <span>Category</span>
@@ -104,7 +104,7 @@ export function PitchTable({ pitches, categories }: PitchTableProps) {
                   router.push(`/sales-pitches/${pitch.id}`);
                 }
               }}
-              className="grid cursor-pointer gap-4 bg-white px-5 py-5 transition hover:bg-slate-50 md:grid-cols-[2.4fr,1.5fr,1fr,1fr,1.2fr]"
+              className="grid cursor-pointer gap-4 bg-white px-5 py-4 transition hover:bg-slate-50 md:grid-cols-[2.4fr,1.5fr,1fr,1fr,1.2fr]"
             >
               <div>
                 <p className="text-base font-semibold text-slate-950">

@@ -10,12 +10,12 @@ export default function SettingsPage() {
         description="A lightweight settings page makes the product feel complete while staying intentionally simple for recruiter review."
       />
 
-      <div className="grid gap-6 xl:grid-cols-3">
-        <div className="rounded-[28px] border border-white/80 bg-white p-6 shadow-[var(--shadow-soft)]">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent)]">
+      <div className="grid gap-5 xl:grid-cols-3">
+        <div className="surface-card rounded-2xl p-5">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-accent)]">
             Profile
           </p>
-          <h3 className="mt-3 text-xl font-semibold text-slate-950">
+          <h3 className="mt-3 text-lg font-semibold text-slate-950">
             {demoUser.name}
           </h3>
           <p className="mt-2 text-sm text-[var(--color-text-muted)]">
@@ -28,8 +28,8 @@ export default function SettingsPage() {
           </p>
         </div>
 
-        <div className="rounded-[28px] border border-white/80 bg-white p-6 shadow-[var(--shadow-soft)]">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent)]">
+        <div className="surface-card rounded-2xl p-5">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-accent)]">
             Company Preferences
           </p>
           <ul className="mt-5 space-y-3 text-sm leading-7 text-slate-700">
@@ -39,8 +39,8 @@ export default function SettingsPage() {
           </ul>
         </div>
 
-        <div className="rounded-[28px] border border-white/80 bg-white p-6 shadow-[var(--shadow-soft)]">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent)]">
+        <div className="surface-card rounded-2xl p-5">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-accent)]">
             Demo Preferences
           </p>
           <ul className="mt-5 space-y-3 text-sm leading-7 text-slate-700">

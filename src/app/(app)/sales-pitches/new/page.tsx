@@ -37,10 +37,10 @@ export default function NewPitchPage() {
         description="This demo page communicates the intended capture workflow without any backend upload service or automatic media permission prompts."
       />
 
-      <div className="grid gap-6 xl:grid-cols-[1.05fr,0.95fr]">
+      <div className="grid gap-5 xl:grid-cols-[1.05fr,0.95fr]">
         <form
           onSubmit={handleSubmit}
-          className="rounded-[28px] border border-white/80 bg-white p-6 shadow-[var(--shadow-soft)]"
+          className="surface-card rounded-2xl p-5"
         >
           <div className="grid gap-5">
             <div>
@@ -50,7 +50,7 @@ export default function NewPitchPage() {
               <input
                 value={title}
                 onChange={(event) => setTitle(event.target.value)}
-                className="w-full rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface-muted)] px-4 py-3 outline-none transition focus:border-[var(--color-accent)]"
+                className="w-full rounded-xl border border-[var(--color-line)] bg-[var(--color-surface-muted)] px-4 py-2.5 outline-none transition focus:border-[var(--color-accent)]"
               />
             </div>
 
@@ -61,7 +61,7 @@ export default function NewPitchPage() {
               <select
                 value={category}
                 onChange={(event) => setCategory(event.target.value as typeof category)}
-                className="w-full rounded-2xl border border-[var(--color-line)] bg-[var(--color-surface-muted)] px-4 py-3 outline-none transition focus:border-[var(--color-accent)]"
+                className="w-full rounded-xl border border-[var(--color-line)] bg-[var(--color-surface-muted)] px-4 py-2.5 outline-none transition focus:border-[var(--color-accent)]"
               >
                 {pitchCategories.map((item) => (
                   <option key={item} value={item}>
@@ -106,7 +106,7 @@ export default function NewPitchPage() {
                           );
                         }
                       }}
-                      className={`rounded-3xl border p-4 text-left transition ${
+                      className={`rounded-2xl border p-4 text-left transition ${
                         active
                           ? "border-[var(--color-accent)] bg-[var(--color-accent-soft)]"
                           : "border-[var(--color-line)] bg-[var(--color-surface-muted)] hover:border-[var(--color-accent)]"
@@ -122,7 +122,7 @@ export default function NewPitchPage() {
               </div>
             </div>
 
-            <div className="rounded-3xl border border-dashed border-[var(--color-line)] bg-[var(--color-surface-muted)] p-6">
+            <div className="rounded-2xl border border-dashed border-[var(--color-line)] bg-[var(--color-surface-muted)] p-5">
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <p className="font-semibold text-slate-900">Capture simulator</p>
@@ -133,7 +133,7 @@ export default function NewPitchPage() {
                 <button
                   type="button"
                   onClick={startRecordingDemo}
-                  className="rounded-full bg-[var(--color-brand)] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[var(--color-brand-strong)]"
+                  className="rounded-full bg-[var(--color-brand)] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[var(--color-brand-strong)]"
                 >
                   Start Recording
                 </button>
@@ -142,7 +142,7 @@ export default function NewPitchPage() {
 
             <button
               type="submit"
-              className="inline-flex items-center justify-center rounded-full bg-[var(--color-accent)] px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+              className="inline-flex items-center justify-center rounded-full bg-[var(--color-accent)] px-4 py-2.5 text-sm font-semibold text-white transition hover:opacity-90"
             >
               Analyze Pitch
             </button>
@@ -150,11 +150,11 @@ export default function NewPitchPage() {
         </form>
 
         <div className="space-y-6">
-          <div className="rounded-[28px] border border-white/80 bg-white p-6 shadow-[var(--shadow-soft)]">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent)]">
+          <div className="surface-card rounded-2xl p-5">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-accent)]">
               Pitch Guidance
             </p>
-            <h3 className="mt-3 text-xl font-semibold text-slate-950">
+            <h3 className="mt-2.5 text-lg font-semibold text-slate-950">
               What a strong financial-sales pitch should communicate
             </h3>
             <ul className="mt-5 space-y-3 text-sm leading-7 text-slate-700">
@@ -165,8 +165,8 @@ export default function NewPitchPage() {
             </ul>
           </div>
 
-          <div className="rounded-[28px] border border-white/80 bg-[linear-gradient(180deg,#fff7ed_0%,#ffffff_100%)] p-6 shadow-[var(--shadow-soft)]">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-brand-strong)]">
+          <div className="surface-card rounded-2xl p-5">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-brand-strong)]">
               Demo Notes
             </p>
             <p className="mt-3 text-sm leading-7 text-slate-700">

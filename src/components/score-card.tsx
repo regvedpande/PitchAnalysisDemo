@@ -13,10 +13,10 @@ export function ScoreCard({
         : "text-[var(--color-brand-strong)]";
 
   return (
-    <div className="rounded-3xl border border-[var(--color-line)] bg-white p-5">
+    <div className="surface-card rounded-2xl p-4">
       <p className="text-sm font-medium text-[var(--color-text-muted)]">{label}</p>
       <div className="mt-4 flex items-end justify-between">
-        <p className={`text-3xl font-semibold ${tone}`}>{value}</p>
+        <p className={`text-2xl font-semibold ${tone}`}>{value}</p>
         <div className="h-2.5 w-20 overflow-hidden rounded-full bg-slate-100">
           <div
             className="h-full rounded-full bg-gradient-to-r from-[var(--color-brand)] to-[var(--color-accent)]"

@@ -14,19 +14,21 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="sticky top-0 hidden h-screen w-72 shrink-0 border-r border-white/60 bg-[linear-gradient(180deg,#0f4c81_0%,#123861_48%,#0f2741_100%)] px-6 py-8 text-white shadow-2xl lg:block">
+    <aside className="sticky top-0 hidden h-screen w-64 shrink-0 border-r border-[var(--color-line)] bg-[#f8fafc] px-5 py-6 lg:block">
       <div className="flex h-full flex-col">
         <Link href="/" className="inline-flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/12 text-lg font-semibold">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--color-accent)] text-sm font-semibold text-white">
             PP
           </div>
           <div>
-            <p className="text-lg font-semibold">Perfect Pitch</p>
-            <p className="text-sm text-blue-100/80">AI sales coaching demo</p>
+            <p className="text-base font-semibold text-slate-900">Perfect Pitch</p>
+            <p className="text-sm text-[var(--color-text-muted)]">
+              AI sales coaching demo
+            </p>
           </div>
         </Link>
 
-        <div className="mt-10 space-y-2">
+        <div className="mt-8 space-y-1.5">
           {navItems.map((item) => {
             const active =
               pathname === item.href ||
@@ -38,16 +40,16 @@ export function Sidebar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`flex items-center justify-between rounded-2xl px-4 py-3 text-sm font-medium transition ${
+                className={`flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-medium transition ${
                   active
-                    ? "bg-white text-[var(--color-accent)] shadow-lg"
-                    : "text-blue-50/88 hover:bg-white/10 hover:text-white"
+                    ? "bg-white text-slate-900 shadow-sm ring-1 ring-[var(--color-line)]"
+                    : "text-slate-600 hover:bg-white hover:text-slate-900"
                 }`}
               >
                 <span>{item.label}</span>
                 <span
                   className={`h-2.5 w-2.5 rounded-full ${
-                    active ? "bg-[var(--color-brand)]" : "bg-white/25"
+                    active ? "bg-[var(--color-brand)]" : "bg-slate-300"
                   }`}
                 />
               </Link>
@@ -55,11 +57,11 @@ export function Sidebar() {
           })}
         </div>
 
-        <div className="mt-auto rounded-3xl border border-white/10 bg-white/8 p-5 backdrop-blur">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-100/80">
+        <div className="surface-card mt-auto rounded-2xl p-4">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-accent)]">
             Demo Story
           </p>
-          <p className="mt-3 text-sm leading-6 text-blue-50/90">
+          <p className="mt-2.5 text-sm leading-6 text-slate-600">
             Recruiters can trace the full workflow from pitch creation to AI-led
             analysis without any backend dependencies or missing product states.
           </p>

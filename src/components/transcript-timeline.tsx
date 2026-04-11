@@ -8,10 +8,7 @@ export function TranscriptTimeline({
   return (
     <div className="space-y-4">
       {segments.map((segment) => (
-        <div
-          key={segment.id}
-          className="rounded-3xl border border-[var(--color-line)] bg-white p-5"
-        >
+        <div key={segment.id} className="surface-card rounded-2xl p-4">
           <div className="flex flex-wrap items-center gap-3 text-sm">
             <span className="rounded-full bg-[var(--color-accent-soft)] px-3 py-1 font-semibold text-[var(--color-accent)]">
               {segment.timestamp}

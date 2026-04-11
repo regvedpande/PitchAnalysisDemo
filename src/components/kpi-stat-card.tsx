@@ -16,16 +16,16 @@ export function KPIStatCard({
   tone: keyof typeof toneStyles;
 }) {
   return (
-    <div className="rounded-3xl border border-white/80 bg-white p-5 shadow-[var(--shadow-soft)]">
+    <div className="surface-card rounded-2xl p-4">
       <div
-        className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${toneStyles[tone]}`}
+        className={`inline-flex rounded-full px-2.5 py-1 text-[11px] font-semibold ${toneStyles[tone]}`}
       >
         {label}
       </div>
-      <p className="mt-5 text-3xl font-semibold tracking-tight text-slate-950">
+      <p className="mt-4 text-2xl font-semibold tracking-tight text-slate-950">
         {value}
       </p>
-      <p className="mt-2 text-sm text-[var(--color-text-muted)]">{change}</p>
+      <p className="mt-1.5 text-sm text-[var(--color-text-muted)]">{change}</p>
     </div>
   );
 }
