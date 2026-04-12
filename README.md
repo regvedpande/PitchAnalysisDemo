@@ -1,10 +1,10 @@
 # Perfect Pitch
 
-Perfect Pitch is a recruiter-facing mock SaaS demo for AI-assisted sales pitch coaching. It recreates the spirit of the original prototype as a polished Next.js App Router product that feels complete, stable, and easy to understand, while staying fully static and safe to deploy on Vercel.
+Perfect Pitch is a mock SaaS demo for AI-assisted sales pitch coaching. It recreates the spirit of the original prototype as a polished Next.js App Router product that feels complete, stable, and easy to understand.
 
 ## Product Overview
 
-This demo is designed to help a recruiter understand the product idea in under a minute:
+This demo is designed to help a understand the product idea in under a minute:
 
 - enter a clean mock login experience
 - view dashboard KPIs and recent pitch activity
