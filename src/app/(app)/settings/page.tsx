@@ -7,7 +7,7 @@ export default function SettingsPage() {
       <PageHeader
         eyebrow="Settings"
         title="Demo workspace preferences"
-        description="A lightweight settings page makes the product feel complete while staying intentionally simple for recruiter review."
+        description="Manage your profile, preferences, and notification settings. All data is stored locally for this demo experience."
       />
 
       <div className="grid gap-5 xl:grid-cols-3">
@@ -46,7 +46,7 @@ export default function SettingsPage() {
           <ul className="mt-5 space-y-3 text-sm leading-7 text-slate-700">
             <li>No live integrations or backend dependencies</li>
             <li>Mock recordings route to local analysis data</li>
-            <li>All recruiter actions remain deployment-safe on Vercel</li>
+            <li>All actions are stored locally and remain safe for demo use</li>
           </ul>
         </div>
       </div>

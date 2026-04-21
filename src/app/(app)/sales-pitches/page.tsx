@@ -8,7 +8,7 @@ export default function SalesPitchesPage() {
       <PageHeader
         eyebrow="Library"
         title="Sales pitch recordings and analysis snapshots"
-        description="Filter the mock pitch library by topic, status, or date. Every action is client-side and safe for a recruiter walkthrough."
+        description="Browse and filter pitch recordings by topic, status, or date. Use client-side search to explore the coaching analysis library."
         action={{ href: "/sales-pitches/new", label: "Record New Pitch" }}
       />
       <PitchTable pitches={pitchRecords} categories={pitchCategories} />

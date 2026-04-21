@@ -135,7 +135,7 @@ export function PitchTable({ pitches, categories }: PitchTableProps) {
                     type="button"
                     onClick={(event) => {
                       event.stopPropagation();
-                      window.alert("Edit is demo-only in this recruiter build.");
+                      window.alert("Edit features are coming soon in the platform.");
                     }}
                     className="rounded-full border border-[var(--color-line)] px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
                   >

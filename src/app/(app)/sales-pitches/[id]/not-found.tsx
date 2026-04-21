@@ -11,7 +11,7 @@ export default function PitchNotFound() {
       </h1>
       <p className="mt-3 text-sm leading-7 text-[var(--color-text-muted)]">
         Use one of the mock pitch records from the library to continue the
-        recruiter walkthrough.
+        This pitch is not available in this demo.
       </p>
       <Link
         href="/sales-pitches"

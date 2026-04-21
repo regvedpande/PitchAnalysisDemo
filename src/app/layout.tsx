@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Perfect Pitch",
   description:
-    "Recruiter-facing mock demo for AI-assisted sales pitch coaching and analysis.",
+    "AI-powered platform for sales pitch coaching, analysis, and team performance insights.",
 };
 
 export default function RootLayout({

@@ -14,7 +14,7 @@ export function AuthPanel() {
   const [email, setEmail] = useState(powerUserCredentials.email);
   const [password, setPassword] = useState(powerUserCredentials.password);
   const [name, setName] = useState(powerUserTemplate.name);
-  const [company, setCompany] = useState("Recruiter Sandbox");
+  const [company, setCompany] = useState("Perfect Pitch Team");
   const [statusMessage, setStatusMessage] = useState(
     "Use the prefilled power-user account to enter the full demo instantly.",
   );
@@ -69,11 +69,10 @@ export function AuthPanel() {
           Power User Access
         </p>
         <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-950">
-          Log in or register to test the full application
+          Enter the platform
         </h2>
         <p className="mt-3 text-sm leading-7 text-[var(--color-text-muted)]">
-          This is a mock auth layer for recruiter testing only. It stores a local
-          browser profile and routes directly into the product workspace.
+          Log in to experience the Perfect Pitch dashboard. Your profile will be saved locally so you can explore the full coaching workflow.
         </p>
       </div>
 

@@ -193,7 +193,7 @@ export const pitchRecords: PitchRecord[] = [
       note:
         "Solid educational pitch. It will land even better if the final minute is more advisory and less explanatory.",
       recommendedFollowUp:
-        "Pair this with an objection-handling one-pager for recruiter demonstrations.",
+        "Include an objection-handling one-pager with your best-practice library.",
     },
     modelGuidance: {
       emphasize: [

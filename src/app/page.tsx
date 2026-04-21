@@ -8,31 +8,28 @@ export default function HomePage() {
           <div>
             <div className="inline-flex items-center gap-3 rounded-full bg-[var(--color-brand-soft)] px-4 py-2 text-sm font-medium text-[var(--color-brand-strong)]">
               <span className="h-2.5 w-2.5 rounded-full bg-[var(--color-brand)]" />
-              Recruiter-facing product demo
+              Professional Demo
             </div>
             <h1 className="mt-8 max-w-3xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
-              Perfect Pitch helps sales teams practice, review, and improve
-              client-facing messaging.
+              Perfect Pitch: AI-Powered Sales Coaching Platform
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-7 text-[var(--color-text-muted)]">
-              Explore a polished mock platform for AI-assisted sales pitch
-              coaching. Recruiters can follow the full journey from dashboard
-              metrics to transcript-level guidance in under a minute.
+              Explore how wealth management professionals perfect their client pitches with AI-driven coaching, real-time analysis, and actionable insights. Experience the complete platform from KPI dashboards to detailed transcript-level guidance in under 60 seconds.
             </p>
           </div>
 
           <div className="grid gap-4 pt-8 sm:grid-cols-3">
             <div className="surface-subtle rounded-2xl p-4">
-              <p className="text-sm text-[var(--color-text-muted)]">Analysis Coverage</p>
-              <p className="mt-2 text-2xl font-semibold text-slate-950">128 pitches</p>
+              <p className="text-sm text-[var(--color-text-muted)]">Active Pitches</p>
+              <p className="mt-2 text-2xl font-semibold text-slate-950">128 Analyzed</p>
             </div>
             <div className="surface-subtle rounded-2xl p-4">
-              <p className="text-sm text-[var(--color-text-muted)]">Average Score Lift</p>
-              <p className="mt-2 text-2xl font-semibold text-slate-950">+18%</p>
+              <p className="text-sm text-[var(--color-text-muted)]">Score Improvement</p>
+              <p className="mt-2 text-2xl font-semibold text-slate-950">+18 pts avg</p>
             </div>
             <div className="surface-subtle rounded-2xl p-4">
-              <p className="text-sm text-[var(--color-text-muted)]">Review Turnaround</p>
-              <p className="mt-2 text-2xl font-semibold text-slate-950">Under 1 day</p>
+              <p className="text-sm text-[var(--color-text-muted)]">AI Analysis Speed</p>
+              <p className="mt-2 text-2xl font-semibold text-slate-950">Under 1 min</p>
             </div>
           </div>
         </section>

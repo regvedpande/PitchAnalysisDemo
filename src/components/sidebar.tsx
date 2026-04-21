@@ -59,11 +59,10 @@ export function Sidebar() {
 
         <div className="surface-card mt-auto rounded-2xl p-4">
           <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-accent)]">
-            Demo Story
+            About This Demo
           </p>
           <p className="mt-2.5 text-sm leading-6 text-slate-600">
-            Recruiters can trace the full workflow from pitch creation to AI-led
-            analysis without any backend dependencies or missing product states.
+            Experience the full workflow from pitch creation through AI analysis. This interactive demo showcases how Perfect Pitch turns client conversations into coaching insights.
           </p>
         </div>
       </div>

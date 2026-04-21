@@ -6,16 +6,13 @@ export function DemoCTA() {
       <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-2xl">
           <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-accent)]">
-            Recruiter Demo Flow
+            Platform Walkthrough
           </p>
           <h3 className="mt-2 text-xl font-semibold text-slate-950">
-            See how Perfect Pitch turns a recorded talk track into guided
-            coaching.
+            Transform recorded pitches into coaching insights
           </h3>
           <p className="mt-2 text-sm leading-6 text-[var(--color-text-muted)]">
-            Browse the dashboard, inspect a completed analysis, or start a mock
-            new pitch. Every screen uses local demo data and deploys safely to
-            Vercel without backend setup.
+            Explore the complete workflow: view real-time performance metrics, analyze individual pitch recordings, and start a new session. See how AI transforms sales conversations into actionable coaching guidance.
           </p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row">

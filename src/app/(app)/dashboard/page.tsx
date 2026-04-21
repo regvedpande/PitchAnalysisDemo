@@ -3,6 +3,7 @@ import Link from "next/link";
 import { DemoCTA } from "@/components/demo-cta";
 import { KPIStatCard } from "@/components/kpi-stat-card";
 import { LineChart } from "@/components/line-chart";
+import { OnboardingGuide } from "@/components/onboarding-guide";
 import { PageHeader } from "@/components/page-header";
 import {
   dashboardStats,
@@ -14,10 +15,12 @@ import {
 export default function DashboardPage() {
   return (
     <div className="space-y-6">
+      <OnboardingGuide />
+
       <PageHeader
         eyebrow="Overview"
         title="Sales pitch performance at a glance"
-        description="Perfect Pitch brings recorded coaching sessions, score trends, and manager-ready feedback into one recruiter-friendly dashboard."
+        description="Track team performance trends, review AI-generated insights, and monitor coaching progress across all recorded pitch sessions."
         action={{ href: "/sales-pitches/new", label: "New Pitch" }}
       />
 

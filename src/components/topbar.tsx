@@ -48,7 +48,7 @@ export function Topbar({ user }: { user: DemoUser }) {
               Perfect Pitch
             </Link>
             <span className="text-slate-300">/</span>
-            <span>Recruiter Demo</span>
+            <span>Demo Mode</span>
           </div>
           <p className="mt-1.5 text-sm text-[var(--color-text-muted)]">
             AI-assisted sales pitch coaching for financial advisory teams.
