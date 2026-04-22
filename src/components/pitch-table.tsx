@@ -39,21 +39,43 @@ export function PitchTable({ pitches, categories }: PitchTableProps) {
     });
   }, [pitches, dismissedIds, search, status, category, month]);
 
+  const hasActiveFilters = search || status !== "all" || category !== "all" || month !== "all";
+
+  function resetFilters() {
+    setSearch("");
+    setStatus("all");
+    setCategory("all");
+    setMonth("all");
+  }
+
   return (
-    <div className="surface-card rounded-2xl p-5">
-      <div className="grid gap-3 lg:grid-cols-[2fr,1fr,1fr,1fr]">
+    <div className="rounded-xl border border-slate-200 bg-white p-6">
+      <div className="mb-6 flex items-center justify-between">
+        <h3 className="text-lg font-semibold text-slate-900">Recordings</h3>
+        {hasActiveFilters && (
+          <button
+            type="button"
+            onClick={resetFilters}
+            className="text-sm font-medium text-slate-600 hover:text-slate-900 transition"
+          >
+            Clear filters
+          </button>
+        )}
+      </div>
+
+      <div className="mb-6 grid gap-3 lg:grid-cols-[2fr,1fr,1fr,1fr]">
         <input
           value={search}
           onChange={(event) => setSearch(event.target.value)}
           placeholder="Search by title, presenter, or audience"
-          className="rounded-xl border border-[var(--color-line)] bg-[var(--color-surface-muted)] px-4 py-2.5 text-sm outline-none transition focus:border-[var(--color-accent)]"
+          className="rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-200"
         />
         <select
           value={category}
           onChange={(event) =>
             setCategory(event.target.value as "all" | PitchCategory)
           }
-          className="rounded-xl border border-[var(--color-line)] bg-[var(--color-surface-muted)] px-4 py-2.5 text-sm outline-none transition focus:border-[var(--color-accent)]"
+          className="rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-blue-500 focus:ring-1 focus:ring-blue-200"
         >
           <option value="all">All Categories</option>
           {categories.map((item) => (
@@ -65,7 +87,7 @@ export function PitchTable({ pitches, categories }: PitchTableProps) {
         <select
           value={status}
           onChange={(event) => setStatus(event.target.value as "all" | PitchStatus)}
-          className="rounded-xl border border-[var(--color-line)] bg-[var(--color-surface-muted)] px-4 py-2.5 text-sm outline-none transition focus:border-[var(--color-accent)]"
+          className="rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-blue-500 focus:ring-1 focus:ring-blue-200"
         >
           <option value="all">All Statuses</option>
           <option value="completed">Completed</option>
@@ -75,7 +97,7 @@ export function PitchTable({ pitches, categories }: PitchTableProps) {
         <select
           value={month}
           onChange={(event) => setMonth(event.target.value)}
-          className="rounded-xl border border-[var(--color-line)] bg-[var(--color-surface-muted)] px-4 py-2.5 text-sm outline-none transition focus:border-[var(--color-accent)]"
+          className="rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-blue-500 focus:ring-1 focus:ring-blue-200"
         >
           <option value="all">All Dates</option>
           <option value="2026-04">April 2026</option>
@@ -83,8 +105,8 @@ export function PitchTable({ pitches, categories }: PitchTableProps) {
         </select>
       </div>
 
-      <div className="mt-5 overflow-hidden rounded-2xl border border-[var(--color-line)]">
-        <div className="hidden grid-cols-[2.4fr,1.5fr,1fr,1fr,1.2fr] gap-4 bg-slate-50 px-5 py-4 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-text-muted)] md:grid">
+      <div className="overflow-hidden rounded-lg border border-slate-200">
+        <div className="hidden grid-cols-[2.4fr,1.5fr,1fr,1fr,1.2fr] gap-4 bg-slate-50 px-5 py-3 text-xs font-semibold uppercase tracking-wide text-slate-600 md:grid">
           <span>Pitch</span>
           <span>Category</span>
           <span>Date</span>
@@ -92,7 +114,7 @@ export function PitchTable({ pitches, categories }: PitchTableProps) {
           <span>Status</span>
         </div>
 
-        <div className="divide-y divide-[var(--color-line)]">
+        <div className="divide-y divide-slate-200">
           {visiblePitches.map((pitch) => (
             <div
               key={pitch.id}
@@ -107,17 +129,17 @@ export function PitchTable({ pitches, categories }: PitchTableProps) {
               className="grid cursor-pointer gap-4 bg-white px-5 py-4 transition hover:bg-slate-50 md:grid-cols-[2.4fr,1.5fr,1fr,1fr,1.2fr]"
             >
               <div>
-                <p className="text-base font-semibold text-slate-950">
+                <p className="text-base font-semibold text-slate-900">
                   {pitch.title}
                 </p>
-                <p className="mt-1 text-sm text-[var(--color-text-muted)]">
+                <p className="mt-1 text-sm text-slate-600">
                   {pitch.presenter} · {pitch.clientLabel}
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   <Link
                     href={`/sales-pitches/${pitch.id}`}
                     onClick={(event) => event.stopPropagation()}
-                    className="rounded-full bg-[var(--color-accent)] px-3 py-1.5 text-xs font-semibold text-white transition hover:opacity-90"
+                    className="rounded-lg bg-blue-600 px-3 py-1.5 text-xs font-medium text-white transition hover:bg-blue-700"
                   >
                     View Analysis
                   </Link>
@@ -127,7 +149,7 @@ export function PitchTable({ pitches, categories }: PitchTableProps) {
                       event.stopPropagation();
                       window.alert("Clone is demo-only in this mock product.");
                     }}
-                    className="rounded-full border border-[var(--color-line)] px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+                    className="rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-medium text-slate-700 transition hover:border-slate-400 hover:bg-slate-50"
                   >
                     Clone
                   </button>
@@ -137,7 +159,7 @@ export function PitchTable({ pitches, categories }: PitchTableProps) {
                       event.stopPropagation();
                       window.alert("Edit features are coming soon in the platform.");
                     }}
-                    className="rounded-full border border-[var(--color-line)] px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+                    className="rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-medium text-slate-700 transition hover:border-slate-400 hover:bg-slate-50"
                   >
                     Edit
                   </button>
@@ -147,7 +169,7 @@ export function PitchTable({ pitches, categories }: PitchTableProps) {
                       event.stopPropagation();
                       setDismissedIds((current) => [...current, pitch.id]);
                     }}
-                    className="rounded-full border border-[var(--color-line)] px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:border-rose-300 hover:text-rose-600"
+                    className="rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-medium text-red-600 transition hover:border-red-300 hover:bg-red-50"
                   >
                     Delete
                   </button>
@@ -155,7 +177,7 @@ export function PitchTable({ pitches, categories }: PitchTableProps) {
               </div>
               <div className="text-sm text-slate-700">{pitch.category}</div>
               <div className="text-sm text-slate-700">{pitch.date}</div>
-              <div className="text-sm font-semibold text-slate-950">
+              <div className="text-sm font-semibold text-slate-900">
                 {pitch.score}
               </div>
               <div>
@@ -169,9 +191,8 @@ export function PitchTable({ pitches, categories }: PitchTableProps) {
               <p className="text-lg font-semibold text-slate-900">
                 No pitches match these filters
               </p>
-              <p className="mt-2 text-sm text-[var(--color-text-muted)]">
-                Adjust the filters or clear the search to bring the demo library
-                back into view.
+              <p className="mt-2 text-sm text-slate-600">
+                Adjust the filters or clear the search to bring the demo library back into view.
               </p>
             </div>
           ) : null}

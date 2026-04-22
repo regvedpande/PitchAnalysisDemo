@@ -16,17 +16,17 @@ export function PageHeader({
   };
 }) {
   return (
-    <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+    <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
       <div className="max-w-3xl">
         {eyebrow ? (
-          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-accent)]">
+          <p className="text-xs font-semibold uppercase tracking-wider text-blue-600">
             {eyebrow}
           </p>
         ) : null}
-        <h1 className="mt-2 text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl">
+        <h1 className="mt-2 text-3xl font-bold text-slate-900 sm:text-4xl">
           {title}
         </h1>
-        <p className="mt-2.5 max-w-2xl text-sm leading-6 text-[var(--color-text-muted)]">
+        <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600">
           {description}
         </p>
       </div>
@@ -34,10 +34,10 @@ export function PageHeader({
       {action ? (
         <Link
           href={action.href}
-          className={`inline-flex items-center justify-center rounded-full px-4 py-2.5 text-sm font-semibold transition ${
+          className={`inline-flex items-center justify-center rounded-lg px-4 py-2.5 text-sm font-semibold transition ${
             action.variant === "secondary"
-              ? "border border-[var(--color-line)] bg-white text-slate-700 hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
-              : "bg-[var(--color-brand)] text-white hover:bg-[var(--color-brand-strong)]"
+              ? "border border-slate-300 bg-white text-slate-700 hover:border-slate-400 hover:bg-slate-50"
+              : "bg-blue-600 text-white hover:bg-blue-700"
           }`}
         >
           {action.label}
