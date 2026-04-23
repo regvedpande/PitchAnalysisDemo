@@ -16,17 +16,19 @@ export function PageHeader({
   };
 }) {
   return (
-    <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+    <div className="mb-8 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
       <div className="max-w-3xl">
         {eyebrow ? (
-          <p className="text-xs font-semibold uppercase tracking-wider text-blue-600">
-            {eyebrow}
-          </p>
+          <div className="inline-flex">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] bg-gradient-to-r from-[var(--color-accent)] to-blue-700 bg-clip-text text-transparent">
+              {eyebrow}
+            </p>
+          </div>
         ) : null}
-        <h1 className="mt-2 text-3xl font-bold text-slate-900 sm:text-4xl">
+        <h1 className="mt-3 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">
           {title}
         </h1>
-        <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600">
+        <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-600">
           {description}
         </p>
       </div>
@@ -34,11 +36,9 @@ export function PageHeader({
       {action ? (
         <Link
           href={action.href}
-          className={`inline-flex items-center justify-center rounded-lg px-4 py-2.5 text-sm font-semibold transition ${
-            action.variant === "secondary"
-              ? "border border-slate-300 bg-white text-slate-700 hover:border-slate-400 hover:bg-slate-50"
-              : "bg-blue-600 text-white hover:bg-blue-700"
-          }`}
+          className={`btn ${
+            action.variant === "secondary" ? "btn-secondary" : "btn-primary"
+          } flex-shrink-0`}
         >
           {action.label}
         </Link>

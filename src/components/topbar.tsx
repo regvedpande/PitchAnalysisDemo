@@ -55,18 +55,18 @@ export function Topbar({ user }: { user: DemoUser }) {
   }
 
   return (
-    <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur">
-      <div className="flex flex-col gap-3 px-4 py-3 sm:px-6 lg:px-8 xl:flex-row xl:items-center xl:justify-between">
+    <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/80 backdrop-blur-md">
+      <div className="flex flex-col gap-3 px-4 py-4 sm:px-6 lg:px-8 xl:flex-row xl:items-center xl:justify-between">
         <div>
-          <div className="flex items-center gap-2 text-sm text-slate-600">
-            <Link href="/dashboard" className="font-medium text-slate-900 hover:text-slate-700">
+          <div className="flex items-center gap-3 text-sm text-slate-600">
+            <Link href="/dashboard" className="font-bold text-slate-950 hover:text-[var(--color-accent)] transition text-lg">
               Perfect Pitch
             </Link>
-            <span className="text-slate-300">/</span>
-            <span>Demo</span>
+            <span className="text-slate-300 font-light">/</span>
+            <span className="font-medium">Demo</span>
           </div>
-          <p className="mt-1.5 text-sm text-slate-600">
-            Sales pitch analysis and coaching
+          <p className="mt-1.5 text-xs font-medium uppercase tracking-[0.08em] text-[var(--color-text-light)]">
+            Sales pitch analysis & coaching
           </p>
         </div>
 
@@ -75,17 +75,17 @@ export function Topbar({ user }: { user: DemoUser }) {
             <button
               type="button"
               onClick={() => setIsProfileOpen(!isProfileOpen)}
-              className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-3 py-2 transition hover:border-slate-300"
+              className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-3 py-2.5 transition hover:border-slate-300 hover:shadow-sm"
               aria-label="User menu"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600 text-sm font-semibold text-white">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 text-xs font-bold text-white shadow-sm">
                 {activeUser.initials}
               </div>
               <div className="hidden sm:block">
-                <p className="text-sm font-medium text-slate-900">
+                <p className="text-sm font-semibold text-slate-900">
                   {activeUser.name}
                 </p>
-                <p className="text-xs text-slate-500">
+                <p className="text-xs text-slate-500 font-medium">
                   {activeUser.role}
                 </p>
               </div>
@@ -94,13 +94,13 @@ export function Topbar({ user }: { user: DemoUser }) {
             {isProfileOpen && (
               <div className="absolute right-0 mt-2 w-48 rounded-lg border border-slate-200 bg-white shadow-lg">
                 <div className="px-4 py-3 border-b border-slate-200">
-                  <p className="text-sm font-medium text-slate-900">{activeUser.name}</p>
+                  <p className="text-sm font-semibold text-slate-900">{activeUser.name}</p>
                   <p className="text-xs text-slate-500">{activeUser.email}</p>
                 </div>
                 <button
                   type="button"
                   onClick={handleLogout}
-                  className="w-full px-4 py-2.5 text-sm text-red-600 hover:bg-red-50 transition text-left"
+                  className="w-full px-4 py-2.5 text-sm font-medium text-red-600 hover:bg-red-50 transition text-left"
                 >
                   Sign out
                 </button>
@@ -122,10 +122,10 @@ export function Topbar({ user }: { user: DemoUser }) {
             <Link
               key={item.href}
               href={item.href}
-              className={`rounded-lg px-3.5 py-1.5 text-sm font-medium transition ${
+              className={`rounded-lg px-3.5 py-1.5 text-sm font-semibold transition ${
                 active
-                  ? "bg-blue-600 text-white"
-                  : "bg-white text-slate-600 border border-slate-200 hover:border-slate-300"
+                  ? "bg-gradient-to-b from-blue-600 to-blue-700 text-white shadow-sm"
+                  : "bg-white text-slate-600 border border-slate-200 hover:border-slate-300 hover:bg-slate-50"
               }`}
             >
               {item.label}

@@ -14,40 +14,47 @@ import {
 
 export default function DashboardPage() {
   return (
-    <div className="space-y-6">
+    <div className="section-container">
       <OnboardingGuide />
 
       <PageHeader
-        eyebrow="Overview"
-        title="Sales pitch performance at a glance"
+        eyebrow="Dashboard"
+        title="Sales Performance Hub"
         description="Track team performance trends, review AI-generated insights, and monitor coaching progress across all recorded pitch sessions."
-        action={{ href: "/sales-pitches/new", label: "New Pitch" }}
+        action={{ href: "/sales-pitches/new", label: "Record New Pitch" }}
       />
 
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <div className="card-grid-4">
         {dashboardStats.map((stat) => (
           <KPIStatCard key={stat.label} {...stat} />
         ))}
       </div>
 
-      <div className="grid gap-5 xl:grid-cols-[1.5fr,0.85fr]">
+      <div className="grid gap-6 xl:grid-cols-[1.5fr,0.85fr]">
         <LineChart data={monthlyScores} />
 
-        <div className="surface-card rounded-2xl p-5">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-accent)]">
-            Recent Activity
-          </p>
-          <div className="mt-4 space-y-3">
+        <div className="surface-card rounded-2xl p-6">
+          <div className="flex items-center justify-between gap-4 pb-4 border-b border-[var(--color-line)]">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-accent)]">
+                Recent Activity
+              </p>
+              <h3 className="mt-2 text-lg font-bold text-slate-950">
+                Latest Events
+              </h3>
+            </div>
+          </div>
+          <div className="mt-6 space-y-4">
             {recentActivity.map((activity) => (
               <div
                 key={activity.label}
-                className="surface-subtle rounded-2xl p-4"
+                className="surface-subtle rounded-xl p-4 hover:shadow-sm"
               >
-                <p className="font-semibold text-slate-900">{activity.label}</p>
+                <p className="font-semibold text-slate-950">{activity.label}</p>
                 <p className="mt-2 text-sm leading-6 text-slate-700">
                   {activity.detail}
                 </p>
-                <p className="mt-3 text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-text-muted)]">
+                <p className="mt-3 text-xs font-medium uppercase tracking-[0.12em] text-[var(--color-text-light)]">
                   {activity.time}
                 </p>
               </div>
@@ -56,39 +63,41 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      <div className="grid gap-5 xl:grid-cols-[1.2fr,0.8fr]">
-        <div className="surface-card rounded-2xl p-5">
-          <div className="flex items-center justify-between gap-4">
+      <div className="grid gap-6 xl:grid-cols-[1.2fr,0.8fr]">
+        <div className="surface-card rounded-2xl p-6">
+          <div className="flex items-center justify-between gap-4 pb-4 border-b border-[var(--color-line)]">
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-accent)]">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-accent)]">
                 Recent Pitches
               </p>
-              <h3 className="mt-2 text-lg font-semibold text-slate-950">
-                Latest analyses in the demo library
+              <h3 className="mt-2 text-lg font-bold text-slate-950">
+                Latest Analyses
               </h3>
             </div>
             <Link
               href="/sales-pitches"
-              className="text-sm font-semibold text-[var(--color-accent)]"
+              className="link-accent text-sm font-semibold"
             >
               View all
             </Link>
           </div>
 
-          <div className="mt-5 space-y-3">
+          <div className="mt-6 space-y-3">
             {pitchRecords.slice(0, 4).map((pitch) => (
               <Link
                 key={pitch.id}
                 href={`/sales-pitches/${pitch.id}`}
-                className="flex flex-col gap-3 rounded-2xl border border-[var(--color-line)] p-4 transition hover:border-[var(--color-accent)] hover:bg-[var(--color-accent-soft)]/30 sm:flex-row sm:items-center sm:justify-between"
+                className="group flex flex-col gap-3 rounded-xl border border-[var(--color-line)] p-4 transition hover:border-[var(--color-accent)] hover:bg-[var(--color-accent-soft)]/40 sm:flex-row sm:items-center sm:justify-between"
               >
                 <div>
-                  <p className="font-semibold text-slate-950">{pitch.title}</p>
+                  <p className="font-semibold text-slate-950 group-hover:text-[var(--color-accent)] transition">
+                    {pitch.title}
+                  </p>
                   <p className="mt-1 text-sm text-[var(--color-text-muted)]">
                     {pitch.category} · {pitch.date}
                   </p>
                 </div>
-                <div className="rounded-full bg-[var(--color-brand-soft)] px-3 py-1.5 text-sm font-semibold text-[var(--color-brand-strong)]">
+                <div className="rounded-full bg-gradient-to-r from-[var(--color-brand-soft)] to-[#fff9f5] px-3 py-1.5 text-sm font-semibold text-[var(--color-brand-strong)] flex-shrink-0">
                   Score {pitch.score}
                 </div>
               </Link>
@@ -98,6 +107,9 @@ export default function DashboardPage() {
 
         <DemoCTA />
       </div>
+    </div>
+  );
+}
     </div>
   );
 }

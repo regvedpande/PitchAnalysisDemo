@@ -49,14 +49,14 @@ export function PitchTable({ pitches, categories }: PitchTableProps) {
   }
 
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-6">
+    <div className="surface-card rounded-2xl p-6">
       <div className="mb-6 flex items-center justify-between">
-        <h3 className="text-lg font-semibold text-slate-900">Recordings</h3>
+        <h3 className="text-lg font-bold text-slate-950">Recordings</h3>
         {hasActiveFilters && (
           <button
             type="button"
             onClick={resetFilters}
-            className="text-sm font-medium text-slate-600 hover:text-slate-900 transition"
+            className="text-sm font-semibold text-[var(--color-accent)] hover:text-blue-700 transition"
           >
             Clear filters
           </button>
@@ -68,14 +68,14 @@ export function PitchTable({ pitches, categories }: PitchTableProps) {
           value={search}
           onChange={(event) => setSearch(event.target.value)}
           placeholder="Search by title, presenter, or audience"
-          className="rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-1 focus:ring-blue-200"
+          className="rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm outline-none transition placeholder:text-slate-400 focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent-soft)]"
         />
         <select
           value={category}
           onChange={(event) =>
             setCategory(event.target.value as "all" | PitchCategory)
           }
-          className="rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-blue-500 focus:ring-1 focus:ring-blue-200"
+          className="rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent-soft)]"
         >
           <option value="all">All Categories</option>
           {categories.map((item) => (
@@ -87,7 +87,7 @@ export function PitchTable({ pitches, categories }: PitchTableProps) {
         <select
           value={status}
           onChange={(event) => setStatus(event.target.value as "all" | PitchStatus)}
-          className="rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-blue-500 focus:ring-1 focus:ring-blue-200"
+          className="rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent-soft)]"
         >
           <option value="all">All Statuses</option>
           <option value="completed">Completed</option>
@@ -97,7 +97,7 @@ export function PitchTable({ pitches, categories }: PitchTableProps) {
         <select
           value={month}
           onChange={(event) => setMonth(event.target.value)}
-          className="rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-blue-500 focus:ring-1 focus:ring-blue-200"
+          className="rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-[var(--color-accent)] focus:ring-1 focus:ring-[var(--color-accent-soft)]"
         >
           <option value="all">All Dates</option>
           <option value="2026-04">April 2026</option>
@@ -106,7 +106,7 @@ export function PitchTable({ pitches, categories }: PitchTableProps) {
       </div>
 
       <div className="overflow-hidden rounded-lg border border-slate-200">
-        <div className="hidden grid-cols-[2.4fr,1.5fr,1fr,1fr,1.2fr] gap-4 bg-slate-50 px-5 py-3 text-xs font-semibold uppercase tracking-wide text-slate-600 md:grid">
+        <div className="hidden grid-cols-[2.4fr,1.5fr,1fr,1fr,1.2fr] gap-4 bg-slate-50 px-6 py-4 text-xs font-bold uppercase tracking-[0.08em] text-slate-700 md:grid">
           <span>Pitch</span>
           <span>Category</span>
           <span>Date</span>
@@ -126,10 +126,10 @@ export function PitchTable({ pitches, categories }: PitchTableProps) {
                   router.push(`/sales-pitches/${pitch.id}`);
                 }
               }}
-              className="grid cursor-pointer gap-4 bg-white px-5 py-4 transition hover:bg-slate-50 md:grid-cols-[2.4fr,1.5fr,1fr,1fr,1.2fr]"
+              className="grid cursor-pointer gap-4 bg-white px-6 py-4 transition hover:bg-slate-50 md:grid-cols-[2.4fr,1.5fr,1fr,1fr,1.2fr]"
             >
               <div>
-                <p className="text-base font-semibold text-slate-900">
+                <p className="text-base font-bold text-slate-950">
                   {pitch.title}
                 </p>
                 <p className="mt-1 text-sm text-slate-600">
@@ -139,7 +139,7 @@ export function PitchTable({ pitches, categories }: PitchTableProps) {
                   <Link
                     href={`/sales-pitches/${pitch.id}`}
                     onClick={(event) => event.stopPropagation()}
-                    className="rounded-lg bg-blue-600 px-3 py-1.5 text-xs font-medium text-white transition hover:bg-blue-700"
+                    className="btn btn-primary text-xs"
                   >
                     View Analysis
                   </Link>
@@ -149,7 +149,7 @@ export function PitchTable({ pitches, categories }: PitchTableProps) {
                       event.stopPropagation();
                       window.alert("Clone is demo-only in this mock product.");
                     }}
-                    className="rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-medium text-slate-700 transition hover:border-slate-400 hover:bg-slate-50"
+                    className="btn btn-secondary text-xs"
                   >
                     Clone
                   </button>
@@ -159,7 +159,7 @@ export function PitchTable({ pitches, categories }: PitchTableProps) {
                       event.stopPropagation();
                       window.alert("Edit features are coming soon in the platform.");
                     }}
-                    className="rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-medium text-slate-700 transition hover:border-slate-400 hover:bg-slate-50"
+                    className="btn btn-secondary text-xs"
                   >
                     Edit
                   </button>
@@ -169,15 +169,15 @@ export function PitchTable({ pitches, categories }: PitchTableProps) {
                       event.stopPropagation();
                       setDismissedIds((current) => [...current, pitch.id]);
                     }}
-                    className="rounded-lg border border-slate-300 px-3 py-1.5 text-xs font-medium text-red-600 transition hover:border-red-300 hover:bg-red-50"
+                    className="btn btn-secondary text-xs text-red-600 hover:text-red-700 border-red-200 hover:border-red-300 hover:bg-red-50"
                   >
                     Delete
                   </button>
                 </div>
               </div>
-              <div className="text-sm text-slate-700">{pitch.category}</div>
-              <div className="text-sm text-slate-700">{pitch.date}</div>
-              <div className="text-sm font-semibold text-slate-900">
+              <div className="text-sm font-medium text-slate-700">{pitch.category}</div>
+              <div className="text-sm font-medium text-slate-700">{pitch.date}</div>
+              <div className="text-sm font-bold text-slate-950">
                 {pitch.score}
               </div>
               <div>
@@ -187,8 +187,8 @@ export function PitchTable({ pitches, categories }: PitchTableProps) {
           ))}
 
           {visiblePitches.length === 0 ? (
-            <div className="px-5 py-12 text-center">
-              <p className="text-lg font-semibold text-slate-900">
+            <div className="px-6 py-16 text-center">
+              <p className="text-lg font-bold text-slate-950">
                 No pitches match these filters
               </p>
               <p className="mt-2 text-sm text-slate-600">

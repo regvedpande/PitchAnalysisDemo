@@ -21,17 +21,17 @@ export function LineChart({ data }: { data: MonthlyScorePoint[] }) {
     .join(" ");
 
   return (
-    <div className="surface-card rounded-2xl p-4">
-      <div className="mb-4 flex items-end justify-between gap-4">
+    <div className="surface-card rounded-2xl p-6">
+      <div className="mb-6 flex items-end justify-between gap-4">
         <div>
-          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-accent)]">
+          <p className="text-xs font-bold uppercase tracking-[0.12em] text-[var(--color-accent)]">
             Score Trend
           </p>
-          <h3 className="mt-2 text-lg font-semibold text-slate-950">
+          <h3 className="mt-2.5 text-lg font-bold text-slate-950">
             Monthly pitch quality is trending upward
           </h3>
         </div>
-        <div className="hidden rounded-full bg-[var(--color-brand-soft)] px-3 py-1 text-[11px] font-semibold text-[var(--color-brand-strong)] sm:block">
+        <div className="hidden rounded-full bg-gradient-to-r from-[var(--color-brand-soft)] to-[#fff9f5] px-3.5 py-1.5 text-xs font-bold text-[var(--color-brand-strong)] sm:block shadow-sm">
           +18 points YoY
         </div>
       </div>
@@ -43,8 +43,12 @@ export function LineChart({ data }: { data: MonthlyScorePoint[] }) {
       >
         <defs>
           <linearGradient id="scoreFill" x1="0%" x2="0%" y1="0%" y2="100%">
-            <stop offset="0%" stopColor="#f97316" stopOpacity="0.24" />
-            <stop offset="100%" stopColor="#f97316" stopOpacity="0.02" />
+            <stop offset="0%" stopColor="#f07c2b" stopOpacity="0.2" />
+            <stop offset="100%" stopColor="#f07c2b" stopOpacity="0.01" />
+          </linearGradient>
+          <linearGradient id="scoreLine" x1="0%" x2="100%" y1="0%" y2="0%">
+            <stop offset="0%" stopColor="#f07c2b" />
+            <stop offset="100%" stopColor="#d96616" />
           </linearGradient>
         </defs>
         {[0, 1, 2, 3].map((line) => {
@@ -56,12 +60,13 @@ export function LineChart({ data }: { data: MonthlyScorePoint[] }) {
               x2={width - padding}
               y1={y}
               y2={y}
-              stroke="#d9e2ef"
+              stroke="#f0f4f8"
               strokeDasharray="6 8"
+              strokeWidth="1"
             />
           );
         })}
-        <polyline fill="none" stroke="#f07c2b" strokeWidth="3" points={points} />
+        <polyline fill="none" stroke="url(#scoreLine)" strokeWidth="3.5" points={points} strokeLinecap="round" strokeLinejoin="round" />
         <polygon
           fill="url(#scoreFill)"
           points={`${padding},${height - padding} ${points} ${width - padding},${height - padding}`}
@@ -77,12 +82,13 @@ export function LineChart({ data }: { data: MonthlyScorePoint[] }) {
               (height - padding * 2);
           return (
             <g key={point.month}>
-              <circle cx={x} cy={y} r="4" fill="#1e4f86" />
+              <circle cx={x} cy={y} r="5" fill="white" stroke="#f07c2b" strokeWidth="2.5" />
               <text
                 x={x}
-                y={height - 10}
+                y={height - 8}
                 textAnchor="middle"
                 fontSize="12"
+                fontWeight="600"
                 fill="#64748b"
               >
                 {point.month}
