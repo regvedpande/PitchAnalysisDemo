@@ -55,11 +55,11 @@ export function Topbar({ user }: { user: DemoUser }) {
   }
 
   return (
-    <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/80 backdrop-blur-md">
+    <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur">
       <div className="flex flex-col gap-3 px-4 py-4 sm:px-6 lg:px-8 xl:flex-row xl:items-center xl:justify-between">
         <div>
           <div className="flex items-center gap-3 text-sm text-slate-600">
-            <Link href="/dashboard" className="font-bold text-slate-950 hover:text-[var(--color-accent)] transition text-lg">
+            <Link href="/dashboard" className="text-lg font-bold text-slate-950 transition hover:text-[var(--color-accent)]">
               Perfect Pitch
             </Link>
             <span className="text-slate-300 font-light">/</span>
@@ -75,10 +75,10 @@ export function Topbar({ user }: { user: DemoUser }) {
             <button
               type="button"
               onClick={() => setIsProfileOpen(!isProfileOpen)}
-              className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-3 py-2.5 transition hover:border-slate-300 hover:shadow-sm"
+              className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white px-3 py-2.5 transition hover:border-slate-300"
               aria-label="User menu"
             >
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 text-xs font-bold text-white shadow-sm">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--color-accent)] text-xs font-bold text-white">
                 {activeUser.initials}
               </div>
               <div className="hidden sm:block">
@@ -92,7 +92,7 @@ export function Topbar({ user }: { user: DemoUser }) {
             </button>
 
             {isProfileOpen && (
-              <div className="absolute right-0 mt-2 w-48 rounded-lg border border-slate-200 bg-white shadow-lg">
+              <div className="absolute right-0 mt-2 w-48 rounded-lg border border-slate-200 bg-white shadow-sm">
                 <div className="px-4 py-3 border-b border-slate-200">
                   <p className="text-sm font-semibold text-slate-900">{activeUser.name}</p>
                   <p className="text-xs text-slate-500">{activeUser.email}</p>
@@ -124,7 +124,7 @@ export function Topbar({ user }: { user: DemoUser }) {
               href={item.href}
               className={`rounded-lg px-3.5 py-1.5 text-sm font-semibold transition ${
                 active
-                  ? "bg-gradient-to-b from-blue-600 to-blue-700 text-white shadow-sm"
+                  ? "border border-[var(--color-accent)] bg-[var(--color-accent)] text-white"
                   : "bg-white text-slate-600 border border-slate-200 hover:border-slate-300 hover:bg-slate-50"
               }`}
             >

@@ -51,7 +51,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background: linear-gradient(135deg, #f8fafc 0%, #eef2f5 50%, #e6ecf0 100%);
+  background: radial-gradient(circle at top, #f8fafc 0%, #f3f6f9 40%, #edf2f7 100%);
   color: #0f172a;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -80,14 +80,14 @@ textarea {
 .surface-card {
   border: 1px solid var(--color-line);
   background: var(--color-surface);
-  box-shadow: var(--shadow-card);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-xs);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
 .surface-card:hover {
-  border-color: var(--color-line);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  border-color: #d6dde6;
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
 }
 
 .surface-subtle {
@@ -106,7 +106,7 @@ textarea {
 }
 
 .btn-primary {
-  @apply bg-gradient-to-b from-blue-600 to-blue-700 text-white shadow-sm hover:from-blue-700 hover:to-blue-800 hover:shadow-md;
+  @apply bg-[var(--color-accent)] text-white shadow-sm hover:bg-[#163f6d] hover:shadow-sm;
 }
 
 .btn-secondary {
@@ -122,17 +122,9 @@ textarea {
   @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold;
 }
 
-.badge-brand {
-  @apply bg-[var(--color-brand-soft)] text-[var(--color-brand-strong)];
-}
-
-.badge-accent {
-  @apply bg-[var(--color-accent-soft)] text-[var(--color-accent)];
-}
-
-.badge-success {
-  @apply bg-[var(--color-success-soft)] text-[var(--color-success)];
-}
+.badge-brand { @apply bg-[var(--color-brand-soft)] text-[var(--color-brand-strong)]; }
+.badge-accent { @apply bg-[var(--color-accent-soft)] text-[var(--color-accent)]; }
+.badge-success { @apply bg-[var(--color-success-soft)] text-[var(--color-success)]; }
 
 /* Typography improvements */
 h1 {
@@ -169,14 +161,7 @@ h1 {
   @apply space-y-8;
 }
 
-/* Smooth transitions */
-@media (prefers-reduced-motion: no-preference) {
-  * {
-    @apply transition-all duration-200;
-  }
-}
-
 /* Link hover effect */
 .link-accent {
-  @apply text-[var(--color-accent)] hover:text-[var(--color-accent)] hover:underline underline-offset-2;
+  @apply text-[var(--color-accent)] hover:text-[#163f6d] hover:underline underline-offset-2;
 }
