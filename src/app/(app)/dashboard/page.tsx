@@ -5,6 +5,7 @@ import { KPIStatCard } from "@/components/kpi-stat-card";
 import { LineChart } from "@/components/line-chart";
 import { OnboardingGuide } from "@/components/onboarding-guide";
 import { PageHeader } from "@/components/page-header";
+import { RecruiterInsights } from "@/components/recruiter-insights";
 import {
   dashboardStats,
   monthlyScores,
@@ -107,6 +108,8 @@ export default function DashboardPage() {
 
         <DemoCTA />
       </div>
+
+      <RecruiterInsights pitches={pitchRecords} />
     </div>
   );
 }
