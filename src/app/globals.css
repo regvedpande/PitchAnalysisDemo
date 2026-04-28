@@ -51,7 +51,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background: radial-gradient(circle at top, #f8fafc 0%, #f3f6f9 40%, #edf2f7 100%);
+  background: linear-gradient(180deg, #f8fafc 0%, #eef3f8 42%, #f6f7f2 100%);
   color: #0f172a;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -87,7 +87,6 @@ textarea {
 .surface-card:hover {
   border-color: #d6dde6;
   box-shadow: var(--shadow-sm);
-  transform: translateY(-1px);
 }
 
 .surface-subtle {
@@ -164,4 +163,29 @@ h1 {
 /* Link hover effect */
 .link-accent {
   @apply text-[var(--color-accent)] hover:text-[#163f6d] hover:underline underline-offset-2;
+}
+
+.dashboard-canvas {
+  @apply rounded-lg;
+}
+
+.dashboard-hero {
+  @apply rounded-lg border border-slate-200 bg-white p-5 sm:p-6;
+  box-shadow: var(--shadow-xs);
+}
+
+.dashboard-hero > div:first-child {
+  @apply mb-5;
+}
+
+.dashboard-mini-stat {
+  @apply rounded-lg border border-slate-200 bg-slate-50 p-4;
+}
+
+.dashboard-mini-stat span {
+  @apply block text-xs font-semibold uppercase tracking-[0.1em] text-slate-500;
+}
+
+.dashboard-mini-stat strong {
+  @apply mt-2 block truncate text-2xl font-bold tracking-tight text-slate-950;
 }

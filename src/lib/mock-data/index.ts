@@ -433,6 +433,155 @@ export const pitchRecords: PitchRecord[] = [
       adminReview: 89,
     },
   },
+  {
+    id: "pitch-106",
+    title: "Tax-Loss Harvesting for Volatile Markets",
+    category: "Tax Strategies and Planning",
+    date: "2026-03-21",
+    status: "completed",
+    score: 84,
+    duration: "06:58",
+    presenter: "Maya Singh",
+    thumbnailLabel: "Market volatility playbook",
+    clientLabel: "Tax-Aware ETF Prospects",
+    analysisSummary:
+      "A practical volatility narrative with strong timing language and a clear connection to year-round portfolio reviews.",
+    transcriptSegments: [
+      {
+        id: "t-106-1",
+        timestamp: "00:00",
+        speaker: "Maya",
+        text: "Volatility is uncomfortable, but it can also create a tax-planning window when we act with discipline instead of emotion.",
+      },
+      {
+        id: "t-106-2",
+        timestamp: "02:22",
+        speaker: "Maya",
+        text: "The goal is not to chase losses. The goal is to preserve market exposure while improving after-tax outcomes where the portfolio gives us an opening.",
+      },
+      {
+        id: "t-106-3",
+        timestamp: "05:12",
+        speaker: "Maya",
+        text: "Every recommendation needs to respect wash-sale rules, replacement exposure, and the client story behind the account.",
+      },
+    ],
+    llmFeedback: {
+      summary:
+        "The pitch made a technical strategy feel timely and client-centered, with credible guardrails around implementation.",
+      strengths: [
+        "Good emotional framing around market volatility.",
+        "Clear distinction between tax opportunity and investment discipline.",
+        "Strong compliance-aware language in the final third.",
+      ],
+      opportunities: [
+        "Add a short example of realized loss capture and reinvestment.",
+        "Make the closing next step more specific to review timing.",
+      ],
+      nextSteps: [
+        "Practice a 45-second version for turbulent market calls.",
+        "Create a client-ready checklist for account review triggers.",
+      ],
+    },
+    adminFeedback: {
+      reviewer: "Marcus Chen",
+      note:
+        "Strong tone and practical framing. The topic is useful for advisors during market stress.",
+      recommendedFollowUp:
+        "Add a simple numeric example before using this in live client education.",
+    },
+    modelGuidance: {
+      emphasize: [
+        "Volatility can create planning choices without changing the long-term allocation.",
+        "Tax-loss harvesting must preserve portfolio intent and compliance discipline.",
+        "Clients need a review trigger, not a one-time tactic.",
+      ],
+      avoid: [
+        "Sounding like losses are inherently desirable.",
+        "Treating replacement securities as a minor detail.",
+      ],
+      coachingNote:
+        "Keep the tone calm and advisory so the strategy feels disciplined rather than reactive.",
+    },
+    scoreBreakdown: {
+      toneAndSentiment: 86,
+      structureAndFlow: 83,
+      keyMessage: 84,
+      audienceEngagement: 82,
+      transcriptQuality: 85,
+      adminReview: 84,
+    },
+  },
+  {
+    id: "pitch-107",
+    title: "Municipal Bond Tax Positioning",
+    category: "State and Local Taxes",
+    date: "2026-03-18",
+    status: "completed",
+    score: 80,
+    duration: "05:46",
+    presenter: "Elena Brooks",
+    thumbnailLabel: "Fixed income planning sample",
+    clientLabel: "Tax-Sensitive Income Investors",
+    analysisSummary:
+      "Good audience fit and practical examples, but the structure should better separate yield, residency, and risk considerations.",
+    transcriptSegments: [
+      {
+        id: "t-107-1",
+        timestamp: "00:00",
+        speaker: "Elena",
+        text: "Municipal bonds can improve after-tax income, but the right fit depends on the client's bracket, state, and risk tolerance.",
+      },
+      {
+        id: "t-107-2",
+        timestamp: "02:34",
+        speaker: "Elena",
+        text: "Before we compare yields, we need to understand where the income is taxable and whether the credit profile matches the client's plan.",
+      },
+    ],
+    llmFeedback: {
+      summary:
+        "The pitch handled suitability responsibly and explained the core tax tradeoff in accessible language.",
+      strengths: [
+        "Relevant examples for income-focused investors.",
+        "Good caution against yield-only decision making.",
+      ],
+      opportunities: [
+        "Separate federal and state tax considerations earlier.",
+        "Use a more memorable phrase for after-tax yield.",
+      ],
+      nextSteps: [
+        "Add a side-by-side taxable-equivalent yield example.",
+        "Create a stronger close around portfolio review.",
+      ],
+    },
+    adminFeedback: {
+      reviewer: "Priya Nair",
+      note:
+        "Useful pitch for client education. It needs a tighter framework before becoming a benchmark example.",
+      recommendedFollowUp:
+        "Rehearse a three-part structure: tax fit, income fit, risk fit.",
+    },
+    modelGuidance: {
+      emphasize: [
+        "Municipal bond value depends on the client's tax profile and state exposure.",
+        "Tax benefits should be considered alongside credit and duration risk.",
+      ],
+      avoid: [
+        "Implying municipal bonds are universally superior for taxable accounts.",
+      ],
+      coachingNote:
+        "The pitch improves when the presenter slows down around taxable-equivalent yield and then returns to client suitability.",
+    },
+    scoreBreakdown: {
+      toneAndSentiment: 81,
+      structureAndFlow: 78,
+      keyMessage: 80,
+      audienceEngagement: 79,
+      transcriptQuality: 82,
+      adminReview: 80,
+    },
+  },
 ];
 
 export const dashboardStats = [
@@ -478,6 +627,39 @@ export const recentActivity = [
     detail: "Distribution Timing for Retiree Portfolios is ready for review",
     time: "2 days ago",
   },
+];
+
+export const pipelineStatus = [
+  { label: "Completed", count: 5, color: "bg-emerald-500" },
+  { label: "Processing", count: 1, color: "bg-blue-500" },
+  { label: "Needs Revision", count: 1, color: "bg-amber-500" },
+];
+
+export const coachingQueue = [
+  {
+    owner: "Elena Brooks",
+    focus: "Simplify relocation tax storyline",
+    due: "Today",
+    priority: "High",
+  },
+  {
+    owner: "Daniel Ross",
+    focus: "Tighten mutual fund tax close",
+    due: "Tomorrow",
+    priority: "Medium",
+  },
+  {
+    owner: "Maya Singh",
+    focus: "Add tax-loss harvesting example",
+    due: "Apr 30",
+    priority: "Medium",
+  },
+];
+
+export const demoPlaybook = [
+  "Filter the recording library by topic, score, and status.",
+  "Open a completed pitch to compare transcript and manager feedback.",
+  "Use the new pitch flow to simulate recording, upload, or sample analysis.",
 ];
 
 export function getPitchById(id: string) {
