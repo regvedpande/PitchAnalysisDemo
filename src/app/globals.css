@@ -71,6 +71,17 @@ textarea {
   font: inherit;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
 ::selection {
   background: rgba(30, 79, 134, 0.22);
   color: inherit;
@@ -170,16 +181,12 @@ h1 {
 }
 
 .dashboard-hero {
-  @apply rounded-lg border border-slate-200 bg-white p-5 sm:p-6;
-  box-shadow: var(--shadow-xs);
-}
-
-.dashboard-hero > div:first-child {
-  @apply mb-5;
+  @apply flex flex-col gap-5 rounded-xl border border-slate-200/90 bg-white p-5 sm:p-6;
+  box-shadow: var(--shadow-sm);
 }
 
 .dashboard-mini-stat {
-  @apply rounded-lg border border-slate-200 bg-slate-50 p-4;
+  @apply rounded-xl border border-slate-200/80 bg-gradient-to-b from-white to-slate-50/90 p-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.9)];
 }
 
 .dashboard-mini-stat span {

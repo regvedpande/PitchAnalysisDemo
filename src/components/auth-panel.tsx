@@ -131,9 +131,9 @@ export function AuthPanel() {
   }
 
   return (
-    <section className="flex flex-col justify-between gap-6 rounded-2xl border border-slate-200 bg-white p-8">
+    <section className="flex flex-col justify-between gap-6 rounded-2xl border border-slate-200/90 bg-white p-8 shadow-[var(--shadow-sm)]">
       <div>
-        <h2 className="text-3xl font-semibold text-slate-900">
+        <h2 className="text-3xl font-semibold tracking-tight text-slate-900">
           Perfect Pitch Demo
         </h2>
         <p className="mt-2 text-base text-slate-600">
@@ -144,19 +144,25 @@ export function AuthPanel() {
         </p>
       </div>
 
-      <div className="flex gap-1 rounded-lg bg-slate-100 p-1">
+      <div
+        className="flex gap-1 rounded-xl bg-slate-100/90 p-1 ring-1 ring-slate-200/60"
+        role="tablist"
+        aria-label="Authentication mode"
+      >
         {(["login", "register"] as const).map((tab) => (
           <button
             key={tab}
             type="button"
+            role="tab"
+            aria-selected={mode === tab}
             onClick={() => {
               setMode(tab);
               setError("");
             }}
             disabled={isLoading}
-            className={`flex-1 rounded-md px-4 py-2 text-sm font-medium transition ${
+            className={`flex-1 rounded-lg px-4 py-2 text-sm font-semibold transition ${
               mode === tab
-                ? "bg-white text-slate-900 shadow-sm"
+                ? "bg-white text-slate-900 shadow-sm ring-1 ring-slate-200/80"
                 : "text-slate-600 hover:text-slate-900"
             } disabled:opacity-50`}
           >
@@ -167,12 +173,13 @@ export function AuthPanel() {
 
       {mode === "login" ? (
         <form className="space-y-4" onSubmit={handleLogin}>
-          <div className="rounded-lg border border-slate-200 bg-blue-50 p-4">
-            <p className="text-xs font-semibold uppercase tracking-wide text-blue-900">
+          <div className="rounded-xl border border-[var(--color-accent)]/20 bg-[var(--color-accent-soft)] p-4">
+            <p className="text-xs font-semibold uppercase tracking-wide text-[var(--color-accent)]">
               Demo Account
             </p>
-            <p className="mt-2 text-sm text-blue-800">
-              <strong>{powerUserCredentials.email}</strong> / <strong>{powerUserCredentials.password}</strong>
+            <p className="mt-2 text-sm text-slate-800">
+              <strong>{powerUserCredentials.email}</strong> /{" "}
+              <strong>{powerUserCredentials.password}</strong>
             </p>
           </div>
           
@@ -192,7 +199,7 @@ export function AuthPanel() {
               onChange={(event) => setEmail(event.target.value)}
               placeholder="name@company.com"
               disabled={isLoading}
-              className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm placeholder:text-slate-400 outline-none transition focus:border-blue-500 focus:ring-1 focus:ring-blue-200 disabled:bg-slate-50"
+              className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm placeholder:text-slate-400 transition focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent)]/20 disabled:bg-slate-50"
             />
           </div>
 
@@ -206,14 +213,14 @@ export function AuthPanel() {
               onChange={(event) => setPassword(event.target.value)}
               placeholder="••••••••"
               disabled={isLoading}
-              className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm placeholder:text-slate-400 outline-none transition focus:border-blue-500 focus:ring-1 focus:ring-blue-200 disabled:bg-slate-50"
+              className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm placeholder:text-slate-400 transition focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent)]/20 disabled:bg-slate-50"
             />
           </div>
 
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-700 disabled:opacity-50"
+            className="w-full rounded-xl bg-[var(--color-accent)] px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:brightness-95 disabled:opacity-50"
           >
             {isLoading ? "Signing in..." : "Sign In"}
           </button>
@@ -236,7 +243,7 @@ export function AuthPanel() {
               onChange={(event) => setName(event.target.value)}
               placeholder="Jane Smith"
               disabled={isLoading}
-              className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm placeholder:text-slate-400 outline-none transition focus:border-blue-500 focus:ring-1 focus:ring-blue-200 disabled:bg-slate-50"
+              className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm placeholder:text-slate-400 transition focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent)]/20 disabled:bg-slate-50"
             />
           </div>
 
@@ -250,7 +257,7 @@ export function AuthPanel() {
               onChange={(event) => setEmail(event.target.value)}
               placeholder="name@company.com"
               disabled={isLoading}
-              className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm placeholder:text-slate-400 outline-none transition focus:border-blue-500 focus:ring-1 focus:ring-blue-200 disabled:bg-slate-50"
+              className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm placeholder:text-slate-400 transition focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent)]/20 disabled:bg-slate-50"
             />
           </div>
 
@@ -264,7 +271,7 @@ export function AuthPanel() {
               onChange={(event) => setCompany(event.target.value)}
               placeholder="Your Company"
               disabled={isLoading}
-              className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm placeholder:text-slate-400 outline-none transition focus:border-blue-500 focus:ring-1 focus:ring-blue-200 disabled:bg-slate-50"
+              className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm placeholder:text-slate-400 transition focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent)]/20 disabled:bg-slate-50"
             />
           </div>
 
@@ -278,14 +285,14 @@ export function AuthPanel() {
               onChange={(event) => setPassword(event.target.value)}
               placeholder="••••••••"
               disabled={isLoading}
-              className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm placeholder:text-slate-400 outline-none transition focus:border-blue-500 focus:ring-1 focus:ring-blue-200 disabled:bg-slate-50"
+              className="w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm placeholder:text-slate-400 transition focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent)]/20 disabled:bg-slate-50"
             />
           </div>
 
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-700 disabled:opacity-50"
+            className="w-full rounded-xl bg-[var(--color-accent)] px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:brightness-95 disabled:opacity-50"
           >
             {isLoading ? "Creating account..." : "Create Account"}
           </button>

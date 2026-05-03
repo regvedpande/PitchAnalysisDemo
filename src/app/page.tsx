@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <main className="min-h-screen px-4 py-6 sm:px-6 lg:px-8">
       <div className="mx-auto grid min-h-[calc(100vh-3rem)] max-w-7xl gap-6 lg:grid-cols-[1.15fr,0.85fr]">
-        <section className="surface-card flex flex-col justify-between rounded-lg p-8 sm:p-10">
+        <section className="surface-card flex flex-col justify-between rounded-2xl p-8 sm:p-10 shadow-[var(--shadow-sm)]">
           <div>
             <div className="inline-flex items-center gap-3 rounded-lg bg-[var(--color-brand-soft)] px-4 py-2 text-sm font-medium text-[var(--color-brand-strong)]">
               <span className="h-2.5 w-2.5 rounded-full bg-[var(--color-brand)]" />
