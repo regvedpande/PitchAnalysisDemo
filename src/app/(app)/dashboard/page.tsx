@@ -39,7 +39,7 @@ export default function DashboardPage() {
             action={{ href: "/sales-pitches/new", label: "Record New Pitch" }}
           />
 
-          <div className="grid gap-3 md:grid-cols-3">
+          <div className="grid gap-3 sm:grid-cols-3">
             <div className="dashboard-mini-stat">
               <span>Completed</span>
               <strong>{completedPitches.length}</strong>
@@ -55,7 +55,7 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        <div className="surface-card rounded-lg p-5">
+        <div className="surface-card rounded-lg p-4 sm:p-5">
           <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-accent)]">
             Demo Workspace
           </p>
@@ -84,7 +84,7 @@ export default function DashboardPage() {
       <div className="grid gap-6 xl:grid-cols-[1.45fr,0.9fr]">
         <LineChart data={monthlyScores} />
 
-        <div className="surface-card rounded-lg p-6">
+        <div className="surface-card rounded-lg p-4 sm:p-6">
           <div className="flex items-center justify-between gap-4 pb-4 border-b border-[var(--color-line)]">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-accent)]">
@@ -126,7 +126,7 @@ export default function DashboardPage() {
       </div>
 
       <div className="grid gap-6 xl:grid-cols-[0.95fr,1.05fr]">
-        <div className="surface-card rounded-lg p-6">
+        <div className="surface-card rounded-lg p-4 sm:p-6">
           <div className="border-b border-[var(--color-line)] pb-4">
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-accent)]">
               Coaching Queue
@@ -139,7 +139,7 @@ export default function DashboardPage() {
             {coachingQueue.map((task) => (
               <div
                 key={`${task.owner}-${task.focus}`}
-                className="grid gap-3 rounded-lg border border-slate-200 bg-white p-4 sm:grid-cols-[1fr,auto]"
+                className="grid gap-3 rounded-lg border border-slate-200 bg-white p-3 sm:grid-cols-[1fr,auto] sm:p-4"
               >
                 <div>
                   <p className="font-semibold text-slate-950">{task.focus}</p>
@@ -156,7 +156,7 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        <div className="surface-card rounded-lg p-6">
+        <div className="surface-card rounded-lg p-4 sm:p-6">
           <div className="flex items-center justify-between gap-4 pb-4 border-b border-[var(--color-line)]">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-accent)]">
@@ -187,7 +187,7 @@ export default function DashboardPage() {
       </div>
 
       <div className="grid gap-6 xl:grid-cols-[1.2fr,0.8fr]">
-        <div className="surface-card rounded-lg p-6">
+        <div className="surface-card rounded-lg p-4 sm:p-6">
           <div className="flex items-center justify-between gap-4 pb-4 border-b border-[var(--color-line)]">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-accent)]">
@@ -213,10 +213,10 @@ export default function DashboardPage() {
                 className="group flex flex-col gap-3 rounded-lg border border-[var(--color-line)] p-4 transition hover:border-[var(--color-accent)] hover:bg-[var(--color-accent-soft)]/40 sm:flex-row sm:items-center sm:justify-between"
               >
                 <div>
-                  <p className="font-semibold text-slate-950 group-hover:text-[var(--color-accent)] transition">
+                  <p className="font-semibold text-slate-950 transition group-hover:text-[var(--color-accent)]">
                     {pitch.title}
                   </p>
-                  <p className="mt-1 text-sm text-[var(--color-text-muted)]">
+                  <p className="mt-1 text-sm leading-6 text-[var(--color-text-muted)]">
                     {pitch.category} · {pitch.date}
                   </p>
                 </div>

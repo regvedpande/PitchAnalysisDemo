@@ -21,23 +21,23 @@ export function LineChart({ data }: { data: MonthlyScorePoint[] }) {
     .join(" ");
 
   return (
-    <div className="surface-card rounded-2xl p-6">
-      <div className="mb-6 flex items-end justify-between gap-4">
+    <div className="surface-card rounded-2xl p-4 sm:p-6">
+      <div className="mb-4 flex flex-col gap-3 sm:mb-6 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.12em] text-[var(--color-accent)]">
             Score Trend
           </p>
-          <h3 className="mt-2.5 text-lg font-bold text-slate-950">
+          <h3 className="mt-2 text-base font-bold text-slate-950 sm:text-lg">
             Monthly pitch quality is trending upward
           </h3>
         </div>
-        <div className="hidden rounded-full bg-gradient-to-r from-[var(--color-brand-soft)] to-[#fff9f5] px-3.5 py-1.5 text-xs font-bold text-[var(--color-brand-strong)] sm:block shadow-sm">
+        <div className="w-max rounded-full bg-gradient-to-r from-[var(--color-brand-soft)] to-[#fff9f5] px-3.5 py-1.5 text-xs font-bold text-[var(--color-brand-strong)] shadow-sm">
           +18 points YoY
         </div>
       </div>
       <svg
         viewBox={`0 0 ${width} ${height}`}
-        className="h-64 w-full"
+        className="h-52 w-full sm:h-64"
         role="img"
         aria-label="Mock monthly pitch scores"
       >

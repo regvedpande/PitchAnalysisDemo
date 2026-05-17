@@ -56,8 +56,8 @@ export function RecruiterInsights({ pitches }: { pitches: PitchRecord[] }) {
 
   return (
     <div className="grid gap-6 xl:grid-cols-[1.2fr,0.8fr]">
-      <div className="surface-card rounded-2xl p-6">
-        <div className="flex items-center justify-between gap-3 border-b border-[var(--color-line)] pb-4">
+      <div className="surface-card rounded-2xl p-4 sm:p-6">
+        <div className="flex flex-col gap-3 border-b border-[var(--color-line)] pb-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-accent)]">
               Recruiter Appeal
@@ -75,8 +75,8 @@ export function RecruiterInsights({ pitches }: { pitches: PitchRecord[] }) {
               ((item.avgScore - scoreRange.min) / denominator) * 100;
             return (
               <div key={item.category} className="space-y-1.5">
-                <div className="flex items-center justify-between text-sm">
-                  <p className="font-medium text-slate-700">{item.category}</p>
+                <div className="flex items-start justify-between gap-3 text-sm">
+                  <p className="min-w-0 font-medium leading-5 text-slate-700">{item.category}</p>
                   <p className="font-semibold text-slate-950">
                     {item.avgScore.toFixed(1)}
                   </p>
@@ -93,7 +93,7 @@ export function RecruiterInsights({ pitches }: { pitches: PitchRecord[] }) {
         </div>
       </div>
 
-      <div className="surface-card rounded-2xl p-6">
+      <div className="surface-card rounded-2xl p-4 sm:p-6">
         <div className="border-b border-[var(--color-line)] pb-4">
           <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-accent)]">
             Talent Snapshot

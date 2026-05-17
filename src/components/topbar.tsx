@@ -56,12 +56,12 @@ export function Topbar({ user }: { user: DemoUser }) {
 
   return (
     <header className="sticky top-0 z-20 border-b border-slate-200/90 bg-white/85 shadow-[0_1px_0_0_rgba(15,23,42,0.04)] backdrop-blur-md supports-[backdrop-filter]:bg-white/75">
-      <div className="flex flex-col gap-3 px-4 py-4 sm:px-6 lg:px-8 xl:flex-row xl:items-center xl:justify-between">
-        <div>
+      <div className="flex items-start justify-between gap-3 px-3 py-3 sm:px-5 lg:px-8 xl:items-center">
+        <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-slate-600">
             <Link
               href="/dashboard"
-              className="text-lg font-bold tracking-tight text-slate-950 transition hover:text-[var(--color-accent)]"
+              className="truncate text-base font-bold tracking-tight text-slate-950 transition hover:text-[var(--color-accent)] sm:text-lg"
             >
               Perfect Pitch
             </Link>
@@ -72,17 +72,17 @@ export function Topbar({ user }: { user: DemoUser }) {
               Demo
             </span>
           </div>
-          <p className="mt-1.5 text-xs font-medium uppercase tracking-[0.08em] text-[var(--color-text-light)]">
+          <p className="mt-1 line-clamp-1 text-[11px] font-medium uppercase tracking-[0.08em] text-[var(--color-text-light)] sm:mt-1.5 sm:text-xs">
             Sales pitch analysis & coaching
           </p>
         </div>
 
-        <div className="flex items-center gap-3 self-start xl:self-auto">
+        <div className="flex shrink-0 items-center gap-3">
           <div className="relative">
             <button
               type="button"
               onClick={() => setIsProfileOpen(!isProfileOpen)}
-              className="flex items-center gap-3 rounded-xl border border-slate-200/90 bg-white px-3 py-2 shadow-[var(--shadow-xs)] transition hover:border-slate-300 hover:shadow-sm"
+              className="flex items-center gap-2 rounded-xl border border-slate-200/90 bg-white px-2 py-2 shadow-[var(--shadow-xs)] transition hover:border-slate-300 hover:shadow-sm sm:gap-3 sm:px-3"
               aria-expanded={isProfileOpen}
               aria-haspopup="true"
               aria-label="User menu"
@@ -127,7 +127,7 @@ export function Topbar({ user }: { user: DemoUser }) {
         </div>
       </div>
 
-      <div className="flex gap-2 overflow-x-auto px-4 pb-3 [-ms-overflow-style:none] [scrollbar-width:none] lg:hidden [&::-webkit-scrollbar]:hidden">
+      <div className="flex gap-2 overflow-x-auto px-3 pb-3 [-ms-overflow-style:none] [scrollbar-width:none] sm:px-5 lg:hidden [&::-webkit-scrollbar]:hidden">
         {mobileNav.map((item) => {
           const active =
             pathname === item.href ||
